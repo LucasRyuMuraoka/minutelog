@@ -24,7 +24,7 @@ const Title = styled.h1`
 	cursor: pointer;
 `;
 
-const Subtitle = styled.h3`
+const Subtitle = styled.h1`
 	font-size: 1.5rem;
 	font-weight: 600;
 

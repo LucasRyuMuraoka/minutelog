@@ -1,4 +1,4 @@
-import { AppRoutes } from "./routes/Routes"
+import { AppRoutes } from "./routes/Routes";
 import { GlobalStyles } from "./assets/styles/global";
 
 const App = () => {

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-    :root {
+		:root {
 			/* Fonts */
 			--text-body: #000000;
 			--anchor-color: #422680;

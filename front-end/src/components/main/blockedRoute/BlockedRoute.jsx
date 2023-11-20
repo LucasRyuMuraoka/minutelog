@@ -5,7 +5,7 @@ import { Container, Subtitle, Title, } from "./styles";
 const BlockedRoute = ({ title, subtitle }) => {
 	return(
 		<Container>
-			<Title>{ title }<img src={ errorSvg } /></Title>
+			<Title>{ title }<img src={ errorSvg } alt="Icone redondo e vermelho com um X, com as bordas arredondadas, centralizado" /></Title>
 			<Subtitle>{ subtitle }</Subtitle>
 		</Container>
 	);

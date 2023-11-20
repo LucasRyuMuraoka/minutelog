@@ -21,7 +21,7 @@ const Title =  styled.h1`
 	}
 `;
 
-const Subtitle = styled.h3`
+const Subtitle = styled.h2`
 	font-size: 1rem;
 	cursor: default;
 	

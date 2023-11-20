@@ -4,11 +4,11 @@ import { TableData } from "./styles";
 const TableRow = ({ item }) => {
 	return(
 		<tr>
-			<TableData className="text-center text-muted">{ item.day }</TableData>
-			<TableData className="text-center text-muted">{ item.firstPoint }</TableData>
-			<TableData className="text-center text-muted">{ item.secondPoint }</TableData>
-			<TableData className="text-center text-muted">{ item.thirdPoint }</TableData>
-			<TableData className="text-center text-muted">{ item.fourthPoint }</TableData>
+			<TableData className="text-center text-muted">{ item.date ? item.date : "Pending..." }</TableData>
+			<TableData className="text-center text-muted">{ item.firstPoint ? item.firstPoint : "Pending..." }</TableData>
+			<TableData className="text-center text-muted">{ item.secondPoint ? item.secondPoint : "Pending..." }</TableData>
+			<TableData className="text-center text-muted">{ item.thirdPoint ? item.thirdPoint : "Pending..." }</TableData>
+			<TableData className="text-center text-muted">{ item.fourthPoint ? item.fourthPoint : "Pending..." }</TableData>
 		</tr>
 	);
 }

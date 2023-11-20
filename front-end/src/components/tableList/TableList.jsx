@@ -1,41 +1,27 @@
 import { useEffect, useState } from "react";
+import { PointsService } from "../../services/points.service";
 import { TableRow } from "../tableRow/TableRow"
 import { TableHead } from "./styles";
 
 const TableList = () => {
-	
-	const [items, setItems] = useState([]);
+
+	const [ items, setItems ] = useState([]);
+	const [ userId, setUserId ] = useState("");
+	const pointsService = new PointsService();
 
 	useEffect(() => {
-		const itemsList = [
-			{
-				id: 1,
-				day: "09/11/2023",
-				firstPoint: "11:51:44",
-				secondPoint: "13:00:00",
-				thirdPoint: "14:00:00",
-				fourthPoint: "18:00:44"
-			},
-			{
-				id: 2,
-				day: "10/11/2023",
-				firstPoint: "11:51:44",
-				secondPoint: "13:00:00",
-				thirdPoint: "14:00:00",
-				fourthPoint: "18:00:44"
-			},
-			{
-				id: 3,
-				day: "11/11/2023",
-				firstPoint: "11:51:44",
-				secondPoint: "13:00:00",
-				thirdPoint: "14:00:00",
-				fourthPoint: "Pendente"
-			},
-		];
-
-		setItems(itemsList);
+		setUserId(sessionStorage.getItem("token"));
 	}, []);
+
+	useEffect(() => {
+		if(userId) {
+			pointsService.findByUserId(userId).then(data => {
+				setItems(data);
+			}).catch(error => {
+				console.log(error);
+			});
+		}
+	}, [userId]);
 
 	return (
 		<table className="table">
@@ -50,7 +36,10 @@ const TableList = () => {
 			</thead>
 			<tbody>
 				{
-					items.map(item => <TableRow key={ item.id } item={ item }/>)
+					items.length === 0 ?
+						<TableRow item={{}}/>
+					: 
+						items.map(item => <TableRow key={ item.date } item={ item }/>)
 				}
 			</tbody>
 		</table>
