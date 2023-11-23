@@ -14,6 +14,7 @@ import io.github.MatheusFSantos.MinuteLog.model.exception.specializations.Invali
 import io.github.MatheusFSantos.MinuteLog.model.exception.specializations.UserAlreadyExist;
 import io.github.MatheusFSantos.MinuteLog.model.exception.specializations.UserNotFound;
 import io.github.MatheusFSantos.MinuteLog.model.repository.UsersRepository;
+import io.github.MatheusFSantos.MinuteLog.model.util.validation.UsersValidation;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -41,7 +42,8 @@ public class UsersService {
 	}
 	
 	@Transactional
-	public void save(UsersDTO newUser) throws UserAlreadyExist {
+	public void save(UsersDTO newUser) throws UserAlreadyExist, InvalidFields {
+		UsersValidation.validate(newUser);
 		List<Users> usersList = this.findAll();
 		
 		for(Users user : usersList) {
@@ -56,6 +58,7 @@ public class UsersService {
 	
 	@Transactional
 	public void update(UUID id, UsersDTO updatedUser) throws UserNotFound, InvalidFields {
+		UsersValidation.validate(updatedUser);
 		Users oldUser = this.findById(id);
 		
 		if(oldUser != null) {

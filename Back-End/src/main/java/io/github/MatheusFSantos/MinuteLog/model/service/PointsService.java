@@ -46,7 +46,7 @@ public class PointsService {
 		
 		if(user != null)
 			if(user.getPoints() != null) {
-				List<Points > pointList = user.getPoints();
+				List<Points> pointList = user.getPoints();
 				
 				if(pointList.isEmpty()) {
 					this.pointsRepository.save(new Points(LocalDate.now(), LocalTime.now(), user));

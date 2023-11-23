@@ -11,6 +11,8 @@ public class UsersDTO implements Serializable {
 	private String email;
 	private String password;
 	
+	public UsersDTO() {  }
+	
 	public UsersDTO(String name, String email, String password) {
 		super();
 		this.name = name;
