@@ -40,7 +40,14 @@ const Sidebar = () => {
 
 	return (
 		<Container>
-			<Title>MinuteLog</Title>
+			<Title>
+				<span className="notResponsive">
+					MinuteLog
+				</span>
+				<span className="responsive">
+					M. Log
+				</span>
+				</Title>
 			<Nav>
 				<ListItem>
 					{

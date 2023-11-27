@@ -31,6 +31,10 @@ const Container = styled.section`
 			}
 		}
 	}
+
+	@media only screen and (max-width: 770px) {
+		padding: 3.438rem 2rem;
+	}
 `;
 
 const Main = styled.section`
@@ -40,7 +44,7 @@ const Main = styled.section`
 `;
 
 const Title =  styled.h1`
-	font-size: 36px;
+	font-size: 2.25rem;
 	font-weight: 800;
 
 	display: flex;
@@ -48,6 +52,14 @@ const Title =  styled.h1`
 	gap: 20px;
 
 	cursor: default;
+
+	@media only screen and (max-width: 770px) {
+		font-size: 1.875rem;
+	}
+
+	@media only screen and (max-width: 400px) {
+		font-size: 1.6rem;
+	}
 `;
 
 export {

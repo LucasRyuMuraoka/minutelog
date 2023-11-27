@@ -42,7 +42,7 @@ const MainProfile = () => {
 								</Field>
 								<Field>
 									<FieldTitle>E-mail:</FieldTitle>
-									<FieldSubtitle>{ userInformations ? userInformations.email : "" }</FieldSubtitle>
+									<FieldSubtitle className="email">{ userInformations ? userInformations.email : "" }</FieldSubtitle>
 								</Field>
 								<Field>
 									<FieldTitle>Senha:</FieldTitle>
@@ -57,8 +57,8 @@ const MainProfile = () => {
 						</FieldAndAnchor>
 
 						<ButtonsContainer>
-							<Alert userInformations={ userInformations } title={ "Atualizar conta" } isDelete={ false }/>
-							<Alert userInformations={ userInformations } title={ "Deletar conta" } isDelete={ true }/>
+							<Alert userInformations={ userInformations } title={ "Atualizar" } isDelete={ false }/>
+							<Alert userInformations={ userInformations } title={ "Deletar" } isDelete={ true }/>
 						</ButtonsContainer>
 					</Content>
 				:

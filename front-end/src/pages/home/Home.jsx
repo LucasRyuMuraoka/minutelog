@@ -5,6 +5,7 @@ import { GridTemplate } from "../../components/templates/GridTemplate";
 import { useDinamicPageTitle } from "../../hooks/UseDinamicPageTitle";
 
 const Home = () => {
+	
 	useDinamicPageTitle("Home");
 
 	return (

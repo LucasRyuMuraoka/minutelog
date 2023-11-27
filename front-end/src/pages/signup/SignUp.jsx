@@ -8,20 +8,20 @@ import { useTimeout } from "../../hooks/UseTimeout";
 import { loginSvg } from "../../assets/icons/icons";
 import { Link, useNavigate } from "react-router-dom";
 import { Toast } from "../../components/toast/Toast";
-import { AuthService } from "../../services/auth.service";
 import { useDinamicPageTitle } from "../../hooks/UseDinamicPageTitle";
 import { Container, Button, Elipse, Form, Image, ImageContainer, Input, InputContainer, Label, Main, Question, Title, Subtitle, TitleContainer } from "./styles";
+import { UsersService } from "../../services/users.service";
 
-const Login = () => {
+const Signup = () => {
+	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState(""); 
 
 	const [isDisabled, setIsDisabled] = useState(false);
 
+	const usersService = new UsersService();
 	const navigate = useNavigate();
-	const authService = new AuthService();
-
-	useDinamicPageTitle("Login");
+	useDinamicPageTitle("SignUp");
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -29,11 +29,11 @@ const Login = () => {
 		const alert = toast.loading("Carregando...");
 		setIsDisabled(true);
 
-		authService.login({ email, password }).then(async (loggedUser) => {
+		usersService.create({ name, email, password }).then(async () => {
 			await useTimeout(2000);
 
 			toast.update(alert, {
-				render: `Olá, ${loggedUser.name}! Aguarde...`,
+				render: `Conta criada! Aguarde...`,
 				type: "success",
 				isLoading: false,
 				position: "top-right",
@@ -47,12 +47,15 @@ const Login = () => {
 			});
 
 			await useTimeout(2000);
-			navigate("/");
+			navigate("/login");
 		}).catch(async error => {
+			console.clear();
+			const message = (error.response.data.messages[0] === "User already exist in database!" ? "The E-MAIL field is invalid." : error.response.data.messages[0]);
+
 			await useTimeout(2000);
 
 			toast.update(alert, {
-				render: error,
+				render: message,
 				type: "error",
 				isLoading: false,
 				position: "top-right",
@@ -85,8 +88,12 @@ const Login = () => {
 					</TitleContainer>
 				:
 					<Main>
-						<Title>Realize Login</Title>
+						<Title>Crie sua conta</Title>
 						<Form onSubmit={ handleSubmit }>
+							<InputContainer>
+								<Label htmlFor="email">Nome:</Label>
+								<Input type="text" id="email" placeholder="Informe seu primeiro nome..." value={ name } onChange={ (e) => setName(e.target.value) } required/>
+							</InputContainer>
 							<InputContainer>
 								<Label htmlFor="email">E-mail:</Label>
 								<Input type="text" id="email" placeholder="Informe seu e-mail..." value={ email } onChange={ (e) => setEmail(e.target.value) } required/>
@@ -95,10 +102,10 @@ const Login = () => {
 								<Label htmlFor="password">Senha:</Label>
 								<Input type="password" id="password" placeholder="Informe sua senha..." value={ password } onChange={ (e) => setPassword(e.target.value) } required/>
 							</InputContainer>
-							<Button type="submit" disabled={ isDisabled }>{ isDisabled ? "Carregando..." : "Entrar" }</Button>
+							<Button type="submit" disabled={ isDisabled }>{ isDisabled ? "Carregando..." : "Criar" }</Button>
 						</Form>
 						<Question>
-							Não tem login? <Link to="/signup" className="link">
+							Já tem uma conta? <Link to="/login" className="link">
 								<span className="anchor hover-underline-animation-purple">Clique aqui.</span>
 							</Link>
 						</Question>
@@ -118,4 +125,4 @@ const Login = () => {
 	);
 }
 
-export { Login };
+export { Signup };

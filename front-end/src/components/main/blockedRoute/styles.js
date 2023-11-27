@@ -19,6 +19,10 @@ const Title =  styled.h1`
 		width: 30px;
 		height: auto;
 	}
+
+	@media only screen and (max-width: 490px) {
+		font-size: 20px;
+	}
 `;
 
 const Subtitle = styled.h2`
@@ -27,6 +31,10 @@ const Subtitle = styled.h2`
 	
 	span {
 		color: var(--anchor-color);
+	}
+
+	@media only screen and (max-width: 490px) {
+		font-size: 0.95rem;
 	}
 `;
 

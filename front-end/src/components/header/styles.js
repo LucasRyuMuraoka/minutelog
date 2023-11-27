@@ -22,6 +22,14 @@ const Title = styled.h1`
 	font-weight: 800;
 
 	cursor: pointer;
+
+	@media only screen and (max-width: 950px) {
+		font-size: 2.2rem;
+	}
+
+	@media only screen and (max-width: 490px) {
+		font-size: 1.8rem;
+	}
 `;
 
 const Subtitle = styled.h1`
@@ -29,6 +37,14 @@ const Subtitle = styled.h1`
 	font-weight: 600;
 
 	cursor: pointer;
+
+	@media only screen and (max-width: 950px) {
+		font-size: 1rem;
+	}
+
+	@media only screen and (max-width: 490px) {
+		display: none;
+	}
 `;
 
 const BtnPrimary = styled.button`
@@ -47,6 +63,18 @@ const BtnPrimary = styled.button`
 	&:hover {
 		background-color: var(--btn-primary-hover);
 		transform: scale(1.06);
+	}
+
+	@media only screen and (max-width: 950px) {
+		width: 6.25rem;	
+		height: 2.813rem;
+
+		font-size: 1rem;
+	}
+
+	@media only screen and (max-width: 490px) {
+		width: 5.5rem;
+		height: 2.5rem;
 	}
 `;
 

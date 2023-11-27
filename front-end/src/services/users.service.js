@@ -18,6 +18,14 @@ export class UsersService {
 		})
 	}
 
+	create(newUser) {
+		return new Promise((resolve, reject) => {
+			backend.post("/users", newUser).then(() => {
+				resolve();
+			}).catch((error) => reject(error));
+		})
+	}
+
 	update(id, updatedUser) {
 		return new Promise((resolve, reject) => {
 			backend.put(`/users/${id}`, updatedUser).then(() => {

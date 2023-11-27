@@ -10,6 +10,10 @@ const Container = styled.section`
 	gap: 8.75rem;
 
 	overflow: hidden;	
+
+	@media only screen and (max-width: 770px) {
+		padding: 3.438rem 2rem;
+	}
 `;
 
 export { Container };

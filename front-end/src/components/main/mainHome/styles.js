@@ -16,6 +16,10 @@ const Container = styled.section`
 			color: var(--anchor-color);
 		}
 	}
+	
+	@media only screen and (max-width: 770px) {
+		padding: 3.438rem 2rem;
+	}
 `;
 
 const AnchorAndTitleContainer = styled.section`
@@ -62,6 +66,18 @@ const Title = styled.h1`
 	letter-spacing: 3%;
 
 	cursor: default;
+
+	@media only screen and (max-width: 950px) {
+		font-size: 2rem;
+	}
+
+	@media only screen and (max-width: 490px) {
+		font-size: 1.5rem
+	}
+
+	@media only screen and (max-width: 414px) {
+		font-size: 1.35rem;
+	}
 `;
 
 const Content = styled.section`
@@ -82,12 +98,22 @@ const Content = styled.section`
 		right: 2%;
 
 	}
+
+	@media only screen and (max-width: 414px) {
+		&.w-login {
+			gap: 1.5rem;
+		}
+	}
 `;
 
 const ImageAndElipse = styled.div`
 	position: relative;
 	left: 43.5%;
 	width: 6.25rem;
+
+	@media only screen and (max-width: 414px) {
+		display: none;
+	}
 `;
 
 const Image = styled.img`
@@ -122,6 +148,22 @@ const TitleMinimal = styled.h1`
 	&.italic {
 		font-style: italic;
 	}
+
+	@media only screen and (max-width: 950px) {
+		font-size: 2rem;
+
+		&.italic {
+			margin-top: -10px;
+		}
+	}
+
+	@media only screen and (max-width: 490px) {
+		font-size: 1.5rem;
+	}
+
+	@media only screen and (max-width: 414px) {
+		font-size: 1.25rem;
+	}
 `;
 
 const BtnNewPoint = styled.button`
@@ -138,6 +180,20 @@ const BtnNewPoint = styled.button`
 
 	&:hover {
 		background-color: var(--btn-primary-hover);
+	}
+
+	@media only screen and (max-width: 950px) {
+		width: 15.625rem;
+		height: 4.375rem;
+
+		font-size: 2rem;
+	}
+	
+	@media only screen and (max-width: 414px) {
+		width: 13rem;
+		border-radius: 1rem;
+
+		font-size: 1.5rem;
 	}
 `;
 

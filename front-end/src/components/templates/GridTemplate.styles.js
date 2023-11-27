@@ -11,15 +11,32 @@ const Container = styled.div`
 	.sidenav {
 		grid-area: sidenav;
 		height: 100vh;
+		
+		@media only screen and (max-width: 770px) {
+			width: 20vw;
+		}
 	}
 	
 	.main {
 		grid-area: main;
 		height: 100vh;
+
+		@media only screen and (max-width: 770px) {
+			width: 80vw;
+		}
 	}
 	
 	.footer {
 		grid-area: footer;
+		width: 100vw;
+	}
+
+	@media only screen and (max-width: 770px) {
+		grid-template-areas: 
+		"sidenav main main"
+		"sidenav main main"
+		"footer footer footer"
+	;	
 	}
 `;
 

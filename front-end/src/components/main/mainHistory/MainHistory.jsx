@@ -17,7 +17,7 @@ const MainHistory = () => {
 						<Link className="link">
 							<span className="anchor">
 								Gerar relatório completo
-								<img src={ arrowSvg } width="7" height="10" className="arrow" alt="Pequena seta roxa apontando para a direita"/>
+								<img src={ arrowSvg } width={ 7 } height={ 10 } className="arrow" alt="Pequena seta roxa apontando para a direita"/>
 							</span>
 						</Link>
 					</Main>

@@ -13,13 +13,44 @@ const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 190px;
+
+	@media only screen and (max-width: 990px) {
+		gap: 155px;
+	}
+
+	@media only screen and (max-width: 770px) {
+		gap: 22%;
+	}
+
+	@media only screen and (max-width: 414px) {
+		gap: 15%;
+	}
 `;
 
 const Title = styled.h1`
-	font-size: 1.25rem;
-	font-weight: 800;
+	span {
+		font-size: 1.25rem;
+		font-weight: 800;
 
-	cursor: default;
+		cursor: default;
+
+
+		&.responsive {
+			display: none;
+		}
+	}
+
+	@media only screen and (max-width: 770px) {
+		span {
+			&.responsive {
+				display: block;
+			}
+
+			&.notResponsive  {
+				display: none;
+			}
+		}	
+	}
 `;
 
 const Nav = styled.nav`
@@ -33,6 +64,19 @@ const ListItem = styled.ul`
 	display: flex;
 	flex-direction: column;
 	gap: 65px;
+
+	@media only screen and (max-width: 800px) {
+		position: relative;
+		left: 8%;
+	}
+
+	@media only screen and (max-width: 770px) {
+		left: 0;
+	}
+
+	@media only screen and (max-width: 414px) {
+		gap: 30px;
+	}
 `;
 
 export {

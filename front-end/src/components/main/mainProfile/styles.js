@@ -14,6 +14,11 @@ const Container = styled.section`
 			color: var(--anchor-color);
 		}
 	}
+
+
+	@media only screen and (max-width: 770px) {
+		padding: 3.438rem 2rem;
+	}
 `;
 
 const Content = styled.section`
@@ -27,11 +32,23 @@ const Content = styled.section`
 const Title = styled.h1`
 	font-size: 2.25rem;
 	font-weight: 900;
+
+	@media only screen and (max-width: 770px) {
+		font-size: 1.875rem;
+	}
+
+	@media only screen and (max-width: 400px) {
+		font-size: 1.6rem;
+	}
 `;
 
 const FieldTitle = styled.p`
 	font-size: 1.5rem;
 	font-weight: 700;
+
+	@media only screen and (max-width: 770px) {
+		font-size: 1.2rem;
+	}
 `;
 
 const FieldSubtitle = styled.p`
@@ -41,6 +58,15 @@ const FieldSubtitle = styled.p`
 
 	&.password {
 		color: #B30000;
+	}
+
+	@media only screen and (max-width: 770px) {
+		font-size: 1rem;
+		bottom: 0.1rem;
+
+		&.email {
+			bottom: 0.15rem;
+		}
 	}
 `;
 
