@@ -4,5 +4,4 @@ Minutelog is an electronic time-tracking platform developed with Spring and Reac
 ### 📜- Informações
 > Nome: MinuteLog <br/>
 > Author: Matheus-FSantos, LucasRyuMuraoka <br/>
-> Data: 26/11/2023 <br/>
 > Tech.: Spring and React.
